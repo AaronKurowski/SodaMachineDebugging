@@ -1,4 +1,4 @@
-from SodaMachineDebugging import coins
+import coins
 
 
 class Wallet:

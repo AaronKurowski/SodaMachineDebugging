@@ -1,4 +1,4 @@
-from SodaMachineDebugging import user_interface
+import user_interface
 from customer import Customer
 from soda_machine import SodaMachine
 

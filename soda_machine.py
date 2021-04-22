@@ -1,4 +1,6 @@
-from SodaMachineDebugging import user_interface, coins, cans
+import cans
+import coins
+import user_interface
 
 
 class SodaMachine:

@@ -95,7 +95,7 @@ def try_parse_int(value):
     try:
         return int(value)
     except ValueError:
-        return 0
+        return value.lower()
     except TypeError:
         return 0
 
@@ -115,14 +115,14 @@ def get_unique_can_names(inventory):
 
 def display_can_cost(selected_can):
     """Displays the name of a can and its price"""
-    print(f'The price of a {selected_can.price} is ${selected_can.price}')
+    print(f'The price of a {selected_can.name} is ${selected_can.price}')
 
 
 def display_payment_value(customer_payment):
     """Displays the value of selected coins as customer is choosing coins to deposit"""
     total_payment_value = 0
     for coin in customer_payment:
-        total_payment_value += coin
+        total_payment_value += coin.value
     total_payment_value = round(total_payment_value, 2)
     print(f'You currently have ${total_payment_value} in hand')
 
@@ -146,10 +146,10 @@ def coin_selection():
 def validate_coin_selection(selection):
     """Validation function that checks if 'selection' arugment is an int 1-5"""
     switcher = {
-        1: (True, "Quarter"),
-        2: (True, "Dime"),
-        3: (True, "Nickel"),
-        4: (True, "Penny"),
+        'q': (True, "Quarter"),
+        'd': (True, "Dime"),
+        'n': (True, "Nickel"),
+        'p': (True, "Penny"),
         5: (True, "Done")
     }
     return switcher.get(selection, (False, None))
