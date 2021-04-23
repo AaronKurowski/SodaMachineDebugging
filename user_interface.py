@@ -144,7 +144,7 @@ def coin_selection():
 
 
 def validate_coin_selection(selection):
-    """Validation function that checks if 'selection' arugment is an int 1-5"""
+    """Validation function that checks if 'selection' argument is an int 1-5"""
     switcher = {
         'q': (True, "Quarter"),
         'd': (True, "Dime"),

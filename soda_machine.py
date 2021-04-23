@@ -12,13 +12,13 @@ class SodaMachine:
 
     def fill_register(self):
         """Method will fill SodaMachine's register with certain amounts of each coin when called."""
-        for index in range(8):
+        for index in range(0):
             self.register.append(coins.Quarter())
-        for index in range(10):
+        for index in range(0):
             self.register.append(coins.Dime())
-        for index in range(20):
+        for index in range(0):
             self.register.append(coins.Nickel())
-        for index in range(50):
+        for index in range(0):
             self.register.append(coins.Penny())
 
     def fill_inventory(self):
@@ -54,7 +54,7 @@ class SodaMachine:
             change_value = self.determine_change_value(total_payment_value, selected_soda.price)
             customer_change = self.gather_change_from_register(change_value)
             if customer_change is None:
-                user_interface.output_text('Dispensing ${total_payment_value} back to customer')
+                user_interface.output_text(f'Dispensing ${total_payment_value} back to customer')
                 customer.add_coins_to_wallet(customer_payment)
                 self.return_inventory(selected_soda)
             else:
